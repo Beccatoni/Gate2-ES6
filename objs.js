@@ -39,3 +39,37 @@ car.engine = function(){
     return 'Whooooooh!';
 }
 console.log(car.engine());
+
+
+const band = {
+    vocals: 'Robert Plant',
+    guitar: 'Jimmy Page',
+    bass: 'John Paul Jones',
+    drums: 'John Bonham'
+};
+
+console.log(Object.keys(band));
+console.log(Object.values(band));
+
+
+// loops to help us iterate over an objects
+for (const job in band) {
+    console.log(`On ${job}, it's${band[job]}`)
+}
+
+// delete an method or a property
+delete band.drums;
+console.log(band.hasOwnProperty('drums'));
+
+
+// destructuring objects
+
+const {guitar:myVariable} = band;
+console.log(myVariable);
+// console.log(myBass); error
+
+
+function sings({vocals}){
+    return`${vocals} sings!`;
+}
+console.log(sings(band));
